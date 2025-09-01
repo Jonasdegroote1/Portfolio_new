@@ -1,0 +1,164 @@
+/* Header.css */
+
+/* Header basis */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  transition: all 0.5s;
+  background: var(--color-light-background);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+}
+
+.header.scrolled {
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  color: var(--text-color);
+  text-decoration: none; /* geen standaard underline */
+  padding-bottom: 2px; /* ruimte voor de lijn */
+}
+
+/* Lijn die verschijnt bij hover */
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* direct onder de tekst */
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+.dot {
+  color: var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+/* Desktop nav */
+.nav-desktop {
+  display: none;
+}
+
+.nav-button {
+  margin-left: var(--spacing-md);
+  padding: 0 var(--spacing-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-2xl);
+  transition: all 0.3s;
+  color: var(--text-color);
+  box-shadow: none;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+/* Light mode hover */
+.nav-button:hover {
+  background-color: var(--color-primary-hover) ;
+  color: var(--color-primary);
+}
+
+/* Mobile nav */
+.nav-mobile {
+  display: block;
+}
+
+.mobile-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s;
+  color: var(--text-color);
+}
+
+.mobile-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-light-background);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+  .nav-mobile {
+    display: none;
+  }
+}
+
+/* Dark mode */
+html.dark .header {
+  background: var(--color-dark-background);
+  border-color: var(--color-dark-foreground);
+  color: var(--color-dark-foreground);
+}
+
+html.dark .logo {
+  color: var(--color-dark-foreground);
+}
+
+html.dark .dot {
+  color: var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+/* Dark mode nav-buttons */
+html.dark .nav-button {
+  color: var(--color-dark-foreground);
+  background: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+html.dark .nav-button:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-primary);
+  box-shadow: 0 4px 6px -2px rgba(37, 99, 235, 0.6); /* blauwe glow onder knop */
+}
+
+/* Dark mode mobile button */
+html.dark .mobile-button {
+  color: var(--color-dark-foreground);
+}

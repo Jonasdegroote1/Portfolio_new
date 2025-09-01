@@ -3,6 +3,7 @@
 :root {
   /* Light mode */
   --color-primary: #2563EB;
+  --color-primary-hover: rgba(37, 99, 235, 0.1);
   --color-button-primary: #ffffff;
   --color-light-background: #ffffff;
   --text-color: #1f2937;
