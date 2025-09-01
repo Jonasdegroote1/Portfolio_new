@@ -1,0 +1,20 @@
+/* src/styles/abstract/colors.css */
+
+:root {
+  /* Light mode */
+  --color-primary: #2563EB;
+  --color-button-primary: #ffffff;
+  --color-light-background: #ffffff;
+  --text-color: #1f2937;
+  --color-card: #ffffff;
+  --color-card-text: #1f2937;
+  --color-muted: #ececf0;
+  --color-muted-foreground: #717182;
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  /* Dark mode */
+  --color-dark-background: #0f172a;
+  --color-dark-foreground: #f8fafc;
+  --color-dark-card: #1e293b;
+  --color-dark-card-text: #f8fafc;
+}

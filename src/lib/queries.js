@@ -3,13 +3,26 @@ export const PROJECTS_QUERY = `
     projects {
       id
       title
-      description       
-      link
-      image {
+      slug
+      shortDescription
+    description
+    heroImage {
         url
-        width
-        height
       }
+    thumbnail {
+        url
+      }
+      featured
+      technologies {
+        id
+        name
+      }
+      categories {
+        id
+        name
+      }
+    liveDemo
+    viewCode
     }
   }
 `;
