@@ -91,6 +91,10 @@
   display: block;
 }
 
+.nav-mobile .nav-button {
+  margin-left: 0;
+}
+
 .mobile-button {
   width: 3rem;
   height: 3rem;
@@ -159,6 +163,7 @@ html.dark .nav-button:hover {
 
 html.dark .mobile-button {
   color: var(--color-dark-foreground);
+  background-color: var(--color-dark-card);
 }
 
 html.dark .mobile-menu {
