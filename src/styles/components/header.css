@@ -29,7 +29,6 @@
 }
 
 /* Logo */
-/* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
@@ -37,15 +36,14 @@
   position: relative;
   background-color: transparent;
   color: var(--text-color);
-  text-decoration: none; /* geen standaard underline */
-  padding-bottom: 2px; /* ruimte voor de lijn */
+  text-decoration: none;
+  padding-bottom: 2px;
 }
 
-/* Lijn die verschijnt bij hover */
 .logo::after {
   content: "";
   position: absolute;
-  bottom: 0; /* direct onder de tekst */
+  bottom: 0;
   left: 0;
   width: 0%;
   height: 3px;
@@ -83,7 +81,6 @@
   font-weight: 600;
 }
 
-/* Light mode hover */
 .nav-button:hover {
   background-color: var(--color-primary-hover) ;
   color: var(--color-primary);
@@ -147,7 +144,6 @@ html.dark .dot {
   animation: pulse 2s infinite;
 }
 
-/* Dark mode nav-buttons */
 html.dark .nav-button {
   color: var(--color-dark-foreground);
   background: none;
@@ -158,10 +154,25 @@ html.dark .nav-button {
 html.dark .nav-button:hover {
   background: var(--color-primary-hover);
   color: var(--color-primary);
-  box-shadow: 0 4px 6px -2px rgba(37, 99, 235, 0.6); /* blauwe glow onder knop */
+  box-shadow: 0 4px 6px -2px rgba(37, 99, 235, 0.6);
 }
 
-/* Dark mode mobile button */
 html.dark .mobile-button {
   color: var(--color-dark-foreground);
+}
+
+html.dark .mobile-menu {
+  background: var(--color-dark-background);
+  color: var(--color-dark-foreground);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+html.dark .mobile-icon {
+  color: var(--color-dark-foreground);
+}
+
+html.dark .mobile-button:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-primary);
+  box-shadow: 0 4px 6px -2px rgba(37, 99, 235, 0.6);
 }
