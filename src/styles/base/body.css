@@ -10,7 +10,7 @@ body {
 }
 
 /* Dark mode */
-body.dark {
+html.dark {
   color: var(--color-dark-foreground);
   background-color: var(--color-dark-background);
 }
