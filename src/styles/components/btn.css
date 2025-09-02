@@ -1,0 +1,92 @@
+/* Universele button-styling */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: var(--border-radius-2xl);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  position: relative; /* nodig voor pseudo-element */
+  overflow: hidden;   /* zodat glow niet buiten de button komt */
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-button-primary);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 0; /* tekst staat boven de glow */
+}
+
+/* Glow effect */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%; /* ruim genoeg om volledig over de button te schuiven */
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-20deg) translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+}
+
+.btn-primary:hover::after {
+  transform: skewX(-20deg) translateX(-66.6666%); /* schuift volledig over de button */
+  opacity: 1;
+}
+
+/* Hover styling */
+.btn-primary:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.2rem);
+  text-decoration: none;
+}
+
+/* Focus styling */
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: var(--color-muted);
+  color: var(--color-muted-foreground);
+  border: var( --color-border) 2px solid;
+}
+
+.dark .btn-secondary {
+  background-color: var(--color-dark-card);
+  color: var(--color-dark-card-text);
+  border: var( --color-border) 2px solid;
+}
+
+.btn-secondary:hover {
+  background-color: darken(var(--color-muted), 5%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transform: translateY(-0.2rem);
+  border: var(--color-primary) 2px solid;
+}
+
+.dark .btn-secondary:hover {
+  background-color: var(--color-dark-card);
+  box-shadow: 0 10px 20px -2px rgba(37, 99, 235, 0.6);
+
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}

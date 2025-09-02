@@ -1,0 +1,47 @@
+.hero {
+  position: relative; /* zodat absolute children binnen hero blijven */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: var(--color-background);
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* altijd boven blob */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.dark .hero h1 {
+  color: var(--color-dark-foreground);
+}
+
+.blob-container {
+  position: absolute; /* vult hele hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* achter de tekst */
+}
