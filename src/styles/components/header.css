@@ -9,7 +9,6 @@
   z-index: 40;
   transition: all 0.5s;
   background: var(--color-light-background);
-  border-bottom: 1px solid var(--color-border);
   color: var(--text-color);
 }
 
