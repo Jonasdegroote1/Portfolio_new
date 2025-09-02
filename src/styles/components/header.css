@@ -67,6 +67,7 @@
 }
 
 .nav-button {
+  height: 32px;
   margin-left: var(--spacing-md);
   padding: 0 var(--spacing-md);
   background: none;
@@ -121,6 +122,7 @@
 @media (min-width: 768px) {
   .nav-desktop {
     display: flex;
+    align-items: center;
   }
   .nav-mobile {
     display: none;
