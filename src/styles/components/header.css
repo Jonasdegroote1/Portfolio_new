@@ -3,6 +3,7 @@
 /* Header basis */
 .header {
   position: fixed;
+  heigt: 5rem;
   top: 0;
   left: 0;
   right: 0;
@@ -19,6 +20,7 @@
 
 .header-container {
   max-width: 1200px;
+  height: 3rem;
   margin: 0 auto;
   padding: var(--spacing-md) var(--spacing-2xl);
   display: flex;
