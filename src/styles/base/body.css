@@ -5,13 +5,13 @@ body {
   color: var(--color-muted-foreground);
   margin: 0 auto;
   scroll-behavior: smooth;
-  max-width:1200px ;
+  max-width:1200px;
   transition: all 0.5s;
 }
 
 /* Dark mode */
 html.dark body {
-  color: var(--color-muted-foreground);
+  color: var(--color-dark-text);
   background-color: var(--color-dark-background);
 }
 
@@ -45,6 +45,10 @@ button {
 
 .primary-color {
   color: var(--color-primary);
+}
+
+.color-white {
+  color: var(--color-dark-foreground);
 }
 
 /* Dark mode card */

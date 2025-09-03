@@ -12,6 +12,7 @@
   --color-muted: #ececf0;
   --color-muted-foreground: #717182;
   --color-border: rgba(0, 0, 0, 0.1);
+  --color-dark-text: #9d9e9e;
 
   /* Dark mode */
   --color-dark-background: #0f172a;
