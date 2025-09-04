@@ -85,8 +85,12 @@
     width: 80%;
   }
 
-  .btn-primary, .btn-secondary {
+
+  .hero .btn-primary,.hero .btn-secondary{
     width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-size: 1rem;

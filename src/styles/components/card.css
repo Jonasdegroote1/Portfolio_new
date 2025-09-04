@@ -3,9 +3,10 @@
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-xl);
   max-width: 25rem;
+  width: 100%;
 }
 
-.dark .card{
+.dark .card {
   background-color: var(--color-dark-card);
   color: var(--color-dark-card-text);
 }
@@ -32,7 +33,7 @@
   font-size: 2rem;
   font-weight: 600;
   margin: 0.5rem 0;
-  color: var(--color-card-text);
+  color: var(--text-color);
 }
 
 .dark .card-title {
@@ -44,14 +45,15 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .category {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-2xl);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  font-size: .7rem;
   text-transform: uppercase;
   height: 1rem;
 }
@@ -83,7 +85,7 @@
   color: #ff8aa3;
 }
 
-.card-technologies{
+.card-technologies {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -94,9 +96,8 @@
 .tech-badge {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-2xl);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  font-size: .7rem;
   text-transform: uppercase;
   height: 1rem;
   background-color: var(--color-primary-hover);
@@ -110,6 +111,55 @@
 }
 
 .card-actions > :nth-child(3) {
-  grid-column: 1 / -1;   /* Laat het over beide kolommen gaan */
-  justify-self: stretch;   /* Zorgt dat het echt uitrekt over de kolommen */
+  grid-column: 1 / -1;
+  justify-self: stretch;
+}
+
+/* ---------------- Mobile Friendly ---------------- */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .card-header {
+    height: 12rem;
+  }
+
+  .card-header img {
+    height: 12rem;
+  }
+
+  .card-title {
+    font-size: 1.75rem;
+  }
+
+  .card-overlays {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions > :nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  .category,
+  .tech-badge {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+    height: auto;
+  }
 }

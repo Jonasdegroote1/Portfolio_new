@@ -10,12 +10,12 @@ export default async function Projects() {
 
 
   return (
-    <div>
+    <div className="projects" id="projects">
       <h2>Mijn Projecten</h2>
-      <p>Een selectie van mijn recente werk, van e-commerce platforms tot 3D visualisaties en interactieve applicaties.</p>
+      <p className="projects-sub-description">Een selectie van mijn recente werk, van e-commerce platforms tot 3D visualisaties en <br/> interactieve applicaties.</p>
 
       <div className="projects-grid">
-        <h3>Uitgelichte Projecten</h3>
+        <h3 className="projects-grid__title" >Uitgelichte Projecten</h3>
 
         <div className='cards-container'>
           {projects.map((project) => (

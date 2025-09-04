@@ -4,3 +4,85 @@
   gap: 2rem;
   padding: 2rem 0;
 }
+
+/* Zorg dat kaarten op kleinere schermen full-width kunnen worden */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* één kolom op tablets en mobiel */
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+}
+
+.projects {
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+}
+
+/* Verklein padding op kleinere schermen */
+@media (max-width: 768px) {
+  .projects {
+    padding: 2rem 1rem;
+  }
+}
+
+.projects h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+}
+
+@media (max-width: 480px) {
+  .projects h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.projects h2::after,
+.projects .projects-grid__title::after {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 1) 35%, rgba(37, 99, 235, 0.5) 100%);
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.projects h3 {
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .projects h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.projects h2,
+.projects h3 {
+  color: var(--text-color);
+}
+
+.dark .projects h2,
+.dark .projects h3 {
+  color: var(--color-dark-foreground);
+}
+
+.projects-sub-description {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .projects-sub-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+}
