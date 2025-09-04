@@ -57,7 +57,18 @@
 }
 
 .category-design {
-  background-color: #24ffa763; ;
+  background-color: #24ffa763;
+  color: #6effd1;
+}
+
+.category-development {
+  background-color: #2979ff63;
+  color: #689ffd;
+}
+
+.category-3d-design {
+  background-color: #ff3d7f63;
+  color: #ff689d;
 }
 
 .card-technologies{
