@@ -1,0 +1,92 @@
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-xl);
+  max-width: 25rem;
+}
+
+.dark .card{
+  background-color: var(--color-dark-card);
+  color: var(--color-dark-card-text);
+}
+
+.card-header {
+  border-bottom: var(--color-primary) 1px solid;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  overflow: hidden;
+  height: 15rem;
+}
+
+.card-header img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--color-card-text);
+}
+
+.dark .card-title {
+  color: var(--color-dark-card-text);
+}
+
+.card-overlays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.category {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-2xl);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: .7rem;
+  text-transform: uppercase;
+  height: 1rem;
+}
+
+.category-design {
+  background-color: #24ffa763; ;
+}
+
+.card-technologies{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tech-badge {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-2xl);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: .7rem;
+  text-transform: uppercase;
+  height: 1rem;
+  background-color: var(--color-primary-hover);
+}
+
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.card-actions > :nth-child(3) {
+  grid-column: 1 / -1;   /* Laat het over beide kolommen gaan */
+  justify-self: stretch;   /* Zorgt dat het echt uitrekt over de kolommen */
+}
