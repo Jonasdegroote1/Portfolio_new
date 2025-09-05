@@ -38,7 +38,7 @@
 }
 
 .card-overlays .card-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0.5rem 0;
   text-align: left;
   font-weight: 600;
@@ -84,12 +84,12 @@
   color: #82b1ff;
 }
 
-.category-3d-design {
+.category-3d {
   background-color: #ff3d7f63;
   color: #5a001f;
 }
 
-.dark .category-3d-design {
+.dark .category-3d {
   color: #ff8aa3;
 }
 
