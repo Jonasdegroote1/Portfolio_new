@@ -5,7 +5,12 @@ import "../styles/components/project.css"
 import "../styles/components/card.css"
 
 export default async function Projects() {
-  const data = await hygraph.request(PROJECTS_QUERY);
+  const data = await hygraph.request(
+      PROJECTS_QUERY,
+      {},
+      { cache: "no-store" }
+    );
+
   const projects = data.projects;
 
 
