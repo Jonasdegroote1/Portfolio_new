@@ -36,11 +36,10 @@
   padding: 1rem;
 }
 
-.card-title {
+.card-overlays .card-title {
   font-size: 2rem;
-  font-weight: 600;
   margin: 0.5rem 0;
-  color: var(--text-color);
+  text-align: left;
 }
 
 .dark .card-title {
