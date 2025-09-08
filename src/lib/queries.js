@@ -26,3 +26,13 @@ export const PROJECTS_QUERY = `
     }
   }
 `;
+
+export const technologiesQuery = `
+  query MyQuery {
+    technologies {
+      id
+      name
+      svgCode
+    }
+  }
+`;
