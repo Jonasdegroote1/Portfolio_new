@@ -90,7 +90,7 @@
   border: none;
   border-radius: 0.7rem;
   background-color: var(--color-muted); /* donkergrijs */
-  color: var(--color-dark-foreground);
+  color: var(--text-color);
   font-size: 0.95rem;
 }
 
