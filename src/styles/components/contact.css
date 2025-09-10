@@ -244,9 +244,9 @@ img.social-icon {
 
   .contact-form,
   .contact-info {
-    width: 100%;
     max-width: 500px;   /* niet breder dan 500px */
-    margin: 0 auto;     /* centreren */
+    flex: 1 1 auto;     /* flexibel meeschalen */
+    margin: 0 auto;     /* netjes centreren */
   }
 
   .social-links {
