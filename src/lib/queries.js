@@ -43,7 +43,13 @@ export const PROJECT_BY_SLUG_QUERY = `
       id
       title
       slug
+      shortDescription
       description
+      client
+      type
+      year
+      timeline
+      finished
       heroImage {
         url
       }
