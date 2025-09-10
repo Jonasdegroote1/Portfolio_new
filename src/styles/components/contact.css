@@ -52,7 +52,7 @@
   width: 50%;
 }
 
-.contact-info{
+.contact-info {
   width: 40%;
 }
 
@@ -224,6 +224,7 @@ img.social-icon {
   color: var(--color-dark-card-text);
 }
 
+/* MOBILE FRIENDLY */
 @media (max-width: 768px) {
   .contact {
     padding: 15px;
@@ -244,7 +245,8 @@ img.social-icon {
   .contact-form,
   .contact-info {
     width: 100%;
-    max-width: 100%;
+    max-width: 500px;   /* niet breder dan 500px */
+    margin: 0 auto;     /* centreren */
   }
 
   .social-links {
