@@ -174,7 +174,17 @@
   object-fit: contain;
 }
 
+img.social-icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
 .dark .social-links img.social-icon {
+  filter: invert(1);
+}
+
+img.social-icon {
   filter: invert(1);
 }
 
