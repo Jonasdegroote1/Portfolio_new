@@ -19,7 +19,7 @@ export default function Contact() {
           <ul className="social-links">
             <li>
               <a 
-                href="https://www.linkedin.com/in/jonas-de-groote-5b4b9821b/" 
+                href="https://www.linkedin.com/in/jonas-de-groote-3792b0194/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
