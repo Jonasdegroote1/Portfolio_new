@@ -223,3 +223,66 @@
 .dark .direct-contact p, .dark .direct-contact a {
   color: var(--color-dark-card-text);
 }
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 15px;
+    gap: 15px;
+    height: auto; /* laat de hoogte meeschalen */
+  }
+
+  .contact h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-methods {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .direct-contact {
+    font-size: 1rem;
+    padding: var(--spacing-md);
+  }
+
+  .direct-contact h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact .contact-sub-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+    height: auto; /* laat meeschalen */
+  }
+
+  .social-links a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .social-links img.social-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
