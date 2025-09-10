@@ -49,7 +49,7 @@ export default function Cards({ project }) {
               View Code
             </a>
           )}
-          <a href={project.slug} className="btn btn-primary">
+          <a href={`/projects/${project.slug}`} className="btn btn-primary">
             Bekijk Details
           </a>
         </div>

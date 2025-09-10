@@ -5,11 +5,11 @@ export const PROJECTS_QUERY = `
       title
       slug
       shortDescription
-    description
-    heroImage {
+      description
+      heroImage {
         url
       }
-    thumbnail {
+      thumbnail {
         url
       }
       featured
@@ -21,18 +21,46 @@ export const PROJECTS_QUERY = `
         id
         name
       }
-    liveDemo
-    viewCode
+      liveDemo
+      viewCode
     }
   }
 `;
 
-export const technologiesQuery = `
-  query MyQuery {
+export const TECHNOLOGIES_QUERY = `
+  query GetTechnologies {
     technologies {
       id
       name
       svgCode
+    }
+  }
+`;
+
+export const PROJECT_BY_SLUG_QUERY = `
+  query ProjectBySlug($slug: String!) {
+    project(where: { slug: $slug }) {
+      id
+      title
+      slug
+      description
+      heroImage {
+        url
+      }
+      thumbnail {
+        url
+      }
+      featured
+      technologies {
+        id
+        name
+      }
+      categories {
+        id
+        name
+      }
+      liveDemo
+      viewCode
     }
   }
 `;

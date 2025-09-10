@@ -1,4 +1,4 @@
-import {technologiesQuery} from '../lib/queries'
+import {TECHNOLOGIES_QUERY} from '../lib/queries'
 import "../styles/components/skills.css";
 import SkillsCard from './SkillCard';
 
@@ -10,7 +10,7 @@ export default async function Skills() {
       "Content-Type": "application/json",
       // Voeg token toe als je privé endpoint hebt 
     },
-    body: JSON.stringify({ query: technologiesQuery }),
+    body: JSON.stringify({ query: TECHNOLOGIES_QUERY }),
     cache: "no-store", // geen caching, altijd verse data
   });
 
