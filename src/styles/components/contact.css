@@ -275,7 +275,8 @@ img.social-icon {
 
   .contact-form {
     padding: 1.5rem;
-    height: auto; /* laat meeschalen */
+    height: auto; 
+    width: 80%;
   }
 
   .social-links a {
