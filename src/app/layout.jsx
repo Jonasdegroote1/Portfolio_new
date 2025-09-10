@@ -1,6 +1,7 @@
 // src/app/layout.js
 import { Header } from "@/components/header";
 import "../styles/main.css"; // of body.css, jouw globale stylesheet
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Jonas Portfolio",
@@ -12,7 +13,10 @@ export default function RootLayout({ children }) {
     <html lang="nl">
       <body>
         <Header />
-        {children}
+        <div className="main-container">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );

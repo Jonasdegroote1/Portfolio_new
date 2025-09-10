@@ -1,0 +1,27 @@
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-color);
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-primary);
+  max-width: 100%;  /* overschrijft body-limiet */
+}
+
+.dark footer {
+  background-color: var(--color-dark-card);
+  color: var(--color-dark-card-text);
+}
+
+footer h3:after {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(37, 99, 235, 0.5) 100%
+  );
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
