@@ -1,7 +1,8 @@
 import "../../styles/components/ProjectHeader.css";
+import Project3DObject from "./Project3DObject";
 
 export default function ProjectHeader({ project }) {
-  if (!project) return null; // failsafe
+  if (!project) return null;
 
   const firstCategory =
     project.categories && project.categories.length > 0
@@ -11,7 +12,6 @@ export default function ProjectHeader({ project }) {
   return (
     <div className="project-hero">
       <div className="project-content">
-        
         {/* Categories + status */}
         <div className="project-categories">
           {firstCategory && (
@@ -60,6 +60,8 @@ export default function ProjectHeader({ project }) {
           )}
         </div>
       </div>
+      {/* 3D Object */}
+      <Project3DObject objectType={project.objectType} />
     </div>
   );
 }
