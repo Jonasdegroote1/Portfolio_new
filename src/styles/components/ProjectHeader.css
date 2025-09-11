@@ -1,4 +1,139 @@
 .project-hero {
-  margin-top: 5rem;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 60px 20px;
+  margin: 5rem auto 6.25rem auto;
+}
+
+/* Linkerkant */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Categories (badges) */
+.project-categories {
+  display: flex;
+  gap: 12px;
+}
+
+.category {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.category-3d {
+  background: #e7f0ff;
+  color: #2563eb;
+}
+
+.category-finished {
+  background: #e6fdf2;
+  color: #059669;
+}
+
+.category-in-progress {
+  background: #fff7e6;
+  color: #d97706;
+}
+
+/* Titel */
+.project-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 10px 0;
+  position: relative;
+}
+
+.dark .project-title {
+  color: var(--color-dark-card-text);
+}
+
+.project-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Subtitel */
+.project-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-muted-foreground);
+  line-height: 1.6;
+}
+
+/* Meta info grid */
+.project-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-details p {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin: 0;
+}
+
+.dark .project-details p{
+  color: var(--color-dark-card-text);
+}
+
+.project-details strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Rechterkant (3D illustratie) */
+.project-hero::after {
+  content: "";
+  background: url("/images/3d-placeholder.png") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 350px;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(37, 99, 235, 0.2));
+}
+
+.category-design {
+  background-color: #24ffa763;
+  color: #00442f;
+}
+
+.dark .category-design {
+  color: #79f7cf;
+}
+
+.category-development {
+  background-color: #2979ff63;
+  color: #00225d;
+}
+
+.dark .category-development {
+  color: #82b1ff;
+}
+
+.category-3d {
+  background-color: #ff3d7f63;
+  color: #5a001f;
+}
+
+.dark .category-3d {
+  color: #ff8aa3;
 }

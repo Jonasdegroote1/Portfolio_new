@@ -1,40 +1,64 @@
 import "../../styles/components/ProjectHeader.css";
 
 export default function ProjectHeader({ project }) {
-  // Destructure met defaults
-console.log(project);
+  if (!project) return null; // failsafe
+
+  const firstCategory =
+    project.categories && project.categories.length > 0
+      ? project.categories[0]
+      : null;
+
   return (
     <div className="project-hero">
       <div className="project-content">
-
+        
+        {/* Categories + status */}
         <div className="project-categories">
-          {project.categories?.map((cat) => (
-            <span key={cat.id} className={`category category-${cat.name.toLowerCase()}`}>
-              {cat.name}
+          {firstCategory && (
+            <span
+              key={firstCategory.id}
+              className={`category category-${firstCategory.name.toLowerCase()}`}
+            >
+              {firstCategory.name}
             </span>
-          ))}
-            <span className={`category category-${project.finished ? "finished" : "in-progress"}`}>
-                {project.finished ? "Finished" : "In Progress"}
-              </span>
+          )}
+
+          <span
+            className={`category category-${
+              project.finished ? "finished" : "in-progress"
+            }`}
+          >
+            {project.finished ? "Finished" : "In Progress"}
+          </span>
         </div>
+
+        {/* Titel en subtitel */}
         <h1 className="project-title">{project.title}</h1>
         <p className="project-subtitle">{project.shortDescription}</p>
 
-          <div className="project-details">
+        {/* Details */}
+        <div className="project-details">
+          {project.client && (
             <p>
-              {project.client && <span><strong>Client:</strong> {project.client}</span>}
+              <strong>Client:</strong> {project.client}
             </p>
+          )}
+          {project.type && (
             <p>
-              {project.type && <span><strong>Type:</strong> {project.type}</span>}
+              <strong>Type:</strong> {project.type}
             </p>
+          )}
+          {project.year && (
             <p>
-              {project.year && <span><strong>Year:</strong> {project.year}</span>}
+              <strong>Year:</strong> {project.year}
             </p>
+          )}
+          {project.timeline && (
             <p>
-              {project.timeline && <span><strong>Timeline:</strong> {project.timeline}</span>}
+              <strong>Timeline:</strong> {project.timeline}
             </p>
-          </div>
-
+          )}
+        </div>
       </div>
     </div>
   );
