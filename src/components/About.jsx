@@ -9,13 +9,14 @@ export default function About() {
       </div>
       <div className="about-content">
         <h2>Over mij</h2>
-        <p>Als gepassioneerde front-end developer combineer ik creativiteit met technische expertise om digitale ervaringen te creëren die zowel visueel aantrekkelijk als gebruiksvriendelijk zijn. Mijn focus ligt op het bouwen van moderne, responsieve webapplicaties.</p>
+        <p>Als gepassioneerde <span className="primary-color">front-end developer</span> combineer ik creativiteit met technische expertise om digitale ervaringen te creëren die zowel visueel aantrekkelijk als gebruiksvriendelijk zijn. Mijn focus ligt op het bouwen van moderne, responsieve webapplicaties waar design en functionaliteit hand in hand gaan.</p>
 
-        <p>Met een sterke achtergrond in <span className="primary-color">React</span>, <span className="primary-color">TypeScript</span>  en moderne CSS frameworks, help ik bedrijven en particulieren hun digitale visie tot leven te brengen. Ik geloof in clean code, intuïtieve user interfaces en pixel-perfect implementaties.</p>
+        <p>Dankzij mijn studies <span className="primary-color">Programmeren</span> aan de Arteveldehogeschool, aangevuld met opleidingen in 3D-printing, modelleren en grafische media, heb ik een brede achtergrond die technologie en design samenbrengt. Tijdens mijn stages en werkervaring bij onder andere Esign en Urban Food Fest heb ik niet alleen mijn technische vaardigheden verder ontwikkeld, maar ook geleerd hoe belangrijk samenwerking, communicatie en flexibiliteit zijn binnen een teamomgeving.</p>
 
-        <p>Wanneer ik niet aan het coderen ben, verken ik graag nieuwe technologieën, werk ik aan persoonlijke projecten, of deel ik mijn kennis met de developer community. Ik ben altijd op zoek naar nieuwe uitdagingen en interessante samenwerkingen.</p>
+        <p>Met een sterke basis in <span className="primary-color">React</span>, TypeScript en moderne CSS-frameworks, en ervaring met creatieve tools zoals Illustrator, Photoshop, Blender en AutoCAD, draag ik bij aan projecten waarin gebruiksvriendelijkheid en visueel design centraal staan. Ik geloof in clean code, teamwork en het bouwen van oplossingen die zowel technisch betrouwbaar als esthetisch sterk zijn.</p>
 
-        <p className='color-white'>Klaar voor een nieuwe uitdaging? Laten we samen iets geweldigs bouwen!</p>
+        <p>Naast mijn werk ben ik gepassioneerd door sport, design, tekenen en architectuur, die mij steeds opnieuw inspiratie geven voor <span className="primary-color">creatieve projecten</span>. Ik hou ervan om nieuwe technologieën te verkennen, persoonlijke projecten uit te werken en mijn kennis te delen met anderen.</p>
+        <p className='color-white'>Ik kijk ernaar uit om verder te <span className="primary-color">groeien als developer</span> en samen te werken aan uitdagende projecten waar ik mijn creativiteit en technische expertise kan inzetten.</p>
       </div>
     </div>
   )
