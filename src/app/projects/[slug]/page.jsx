@@ -1,6 +1,5 @@
 import { PROJECT_BY_SLUG_QUERY } from "@/lib/queries";
 import ProjectHeader from "@/components/projects/ProjectHeader";
-import HeroImage from "@/components/projects/HeroImage";
 import ProjectDetails from "@/components/projects/ProjectDetails";
 import MetaSection from "@/components/projects/MetaSection";
 import ProjectGallery from "@/components/projects/ProjectGallery";
@@ -27,15 +26,7 @@ export default async function ProjectPage({ params }) {
   return (
     <div className="project-page">
       <ProjectHeader project={project} />
-
-      {/* <HeroImage url={project.heroImage?.url} alt={project.title} />
-      <ProjectDetails description={project.description} />
-      <MetaSection
-        categories={project.categories}
-        technologies={project.technologies}
-      />
-      <ProjectGallery gallery={project.gallery} title={project.title} />
-      <ProjectLinks liveDemo={project.liveDemo} viewCode={project.viewCode} /> */}
+      <ProjectDetails project={project} />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.project-description__details {
+  display: flex;
+  padding: 2rem;
+  width:  62.5rem;
+  flex-direction: column;
+  border: solid 1px var(--color-primary);
+  margin: 0 auto;
+  border-radius: var(--border-radius-3xl);
+  background-color: var(--color-dark-foreground);
+}
+
+.dark .project-description__details {
+  background-color: var(--color-dark-background);
+}
+
+.project-description__details h2 {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.dark .project-description__details h2 {
+  color: var(--color-dark-card-text);
+}
