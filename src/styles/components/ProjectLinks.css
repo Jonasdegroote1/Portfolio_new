@@ -1,0 +1,49 @@
+.project-links {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50rem; /* zelfde als description */
+  margin: 0 auto;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-3xl);
+  background-color: var(--color-dark-foreground);
+  box-shadow: 0 10px 20px -2px rgba(37, 99, 235, 0.6);
+  text-align: center;
+}
+
+.dark .project-links{
+  background-color: var(--color-dark-background);
+}
+
+.project-links h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: var(--text-color);
+}
+
+.project-links h2::after {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(37, 99, 235, 0.5) 100%
+  );
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.dark .project-links h2 {
+  color: var(--color-dark-card-text);
+}
+
+.link-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
