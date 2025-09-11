@@ -7,6 +7,7 @@
   margin: 0 auto;
   border-radius: var(--border-radius-3xl);
   background-color: var(--color-dark-foreground);
+  box-shadow: 0 10px 20px -2px rgba(37, 99, 235, 0.6);
 }
 
 .dark .project-description__details {
@@ -16,6 +17,20 @@
 .project-description__details h2 {
   text-align: center;
   color: var(--text-color);
+}
+
+.project-description__details h2::after {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(37, 99, 235, 0.5) 100%
+  );
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
 }
 
 .dark .project-description__details h2 {

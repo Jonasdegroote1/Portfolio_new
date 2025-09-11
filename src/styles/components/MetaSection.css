@@ -1,0 +1,52 @@
+.meta-section {
+  display: flex;
+  gap: 60px; /* Ruimte tussen links en rechts */
+  margin-top: 3rem;
+  flex-wrap: wrap; /* Voor responsiviteit */
+}
+
+.meta-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;          /* Verdeling van ruimte */
+  min-width: 200px;
+}
+
+.meta-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Technologieën horizontaal */
+.badges-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge-tech {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #e0f2ff;
+  color: #0077cc;
+}
+
+/* Categorieën verticaal */
+.categories-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge-cat {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f3f3f3;
+  color: #555;
+}
