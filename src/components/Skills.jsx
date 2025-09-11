@@ -22,7 +22,7 @@ export default async function Skills() {
       <h2>Mijn skills</h2>
       <p className="skills-sub-description" >Technologieën en tools waar ik dagelijks mee werk om geweldige digitale ervaringen te creëren.</p>
       <div className="skills-grid">
-        {technologies.map((tech) => (
+        {technologies.slice(0, 8).map((tech) => (
           <SkillsCard key={tech.id} tech={tech} />
         ))
         }
