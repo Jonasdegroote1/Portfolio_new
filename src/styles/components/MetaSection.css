@@ -19,6 +19,24 @@
   color: var(--text-color);
 }
 
+.dark .meta-title {
+  color: var(--color-dark-card-text);
+}
+
+.meta-title::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(37, 99, 235, 0.5) 100%
+  );
+  margin: 0.5rem  0;
+  border-radius: 2px;
+}
+
 /* Technologieën horizontaal */
 .badges-tech {
   display: flex;

@@ -65,6 +65,9 @@ export const PROJECT_BY_SLUG_QUERY = `
         id
         name
       }
+      gallery {
+        url
+      }
       liveDemo
       viewCode
     }

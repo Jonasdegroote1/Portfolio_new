@@ -28,6 +28,7 @@ export default async function ProjectPage({ params }) {
       <ProjectHeader project={project} />
       <ProjectDetails project={project} />
       <MetaSection project={project} />
+      <ProjectGallery project={project} />
     </div>
   );
 }
