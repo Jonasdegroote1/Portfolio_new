@@ -1,12 +1,11 @@
 "use client"
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 export default function Project3DObject({ objectType = "cube" }) {
   return (
     <div className="project-3dobject">
-      <Canvas style={{ width: 250, height: 250 }}>
+      <Canvas style={{ width: "100%", height: "100%" }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[2, 2, 2]} />
         <OrbitControls enableZoom={false} />

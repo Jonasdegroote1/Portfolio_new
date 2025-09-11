@@ -1,17 +1,29 @@
 .project-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  display: flex;               /* Flex in plaats van grid */
+  flex-direction: row;         /* Links + rechts */
+  gap: 60px;                   /* Ruimte tussen kolommen */
+  align-items: center;         /* Verticale uitlijning */
   padding: 60px 20px;
   margin: 5rem auto 6.25rem auto;
+  flex-wrap: wrap;             /* Zorgt dat het responsive blijft op kleine schermen */
 }
 
 /* Linkerkant */
 .project-content {
+  flex: 1;                     /* Neemt beschikbare ruimte */
+  min-width: 300px;            /* Zorgt voor minimale breedte */
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* Rechterkant 3D object */
+.project-3dobject {
+  flex: 1;                     /* Neemt de andere helft */
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Categories (badges) */
@@ -91,6 +103,10 @@
   color: var(--color-dark-card-text);
 }
 
+.dark .project-details {
+  color: var(--color-dark-card-text);
+}
+
 .project-details strong {
   display: block;
   font-size: 0.8rem;
@@ -98,17 +114,6 @@
   margin-bottom: 4px;
   font-weight: 700;
   letter-spacing: 0.05em;
-}
-
-/* Rechterkant (3D illustratie) */
-.project-hero::after {
-  content: "";
-  background: url("/images/3d-placeholder.png") no-repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 350px;
-  display: block;
-  filter: drop-shadow(0 10px 30px rgba(37, 99, 235, 0.2));
 }
 
 .category-design {
