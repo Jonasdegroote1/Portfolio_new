@@ -68,3 +68,8 @@
   background-color: #f3f3f3;
   color: #555;
 }
+
+.dark .badge-cat {
+  background-color: var(--color-dark-card);
+  color: var(--color-dark-card-text);
+}
