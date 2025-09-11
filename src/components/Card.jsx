@@ -24,12 +24,14 @@ export default function Cards({ project }) {
         <p className="card-description">{project.shortDescription}</p>
 
         <div className="card-technologies">
-          {project.technologies.map((tech) => (
+          {project.technologies.slice(0, 3).map((tech) => (
             <span key={tech.id} className="tech-badge">
               {tech.name}
             </span>
           ))}
+          {project.technologies.length > 3 && <span className="tech-badge">...</span>}
         </div>
+
 
         <div className="card-actions">
           {project.liveDemo && (
