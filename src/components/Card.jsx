@@ -10,12 +10,15 @@ export default function Cards({ project }) {
           <h3 className="card-title">{project.title}</h3>
 
           <div className="card-categories">
-            {project.categories?.map((cat) => (
-              <span key={cat.id} className={`category category-${cat.name.toLowerCase()}`}>
-                {cat.name}
+            {project.categories?.length > 0 && (
+              <span
+                key={project.categories[0].id}
+                className={`category category-${project.categories[0].name.toLowerCase()}`}
+              >
+                {project.categories[0].name}
               </span>
-            ))}
-        </div>
+            )}
+          </div>
         </div>
 
         <p className="card-description">{project.shortDescription}</p>
