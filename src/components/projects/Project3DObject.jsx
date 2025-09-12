@@ -1,35 +1,30 @@
-"use client"
+"use client";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import dynamic from "next/dynamic";
 
-export default function Project3DObject({ objectType = "cube" }) {
+// Dynamisch importeren
+const Plant = dynamic(() => import("../3D/Plant"), { ssr: false });
+const Roof = dynamic(() => import("../3D/Roof"), { ssr: false });
+
+export default function Project3DObject({ objectType }) {
+  console.log(objectType)
   return (
     <div className="project-3dobject">
-      <Canvas style={{ width: "100%", height: "100%" }}>
+      <Canvas
+        style={{ width: "100%", height: "100%" }}
+        camera={{ position: [5, 5, 8], fov: 50 }}
+      >
+        {/* Lights */}
         <ambientLight intensity={0.5} />
-        <directionalLight position={[2, 2, 2]} />
-        <OrbitControls enableZoom={false} />
+        <directionalLight position={[5, 5, 5]} intensity={1} />
 
-        {objectType === "cube" && (
-          <mesh rotation={[0.4, 0.6, 0]}>
-            <boxGeometry args={[1.5, 1.5, 1.5]} />
-            <meshStandardMaterial color="#6C63FF" />
-          </mesh>
-        )}
+        {/* Controls */}
+        <OrbitControls enableZoom={true} />
 
-        {objectType === "sphere" && (
-          <mesh rotation={[0.4, 0.6, 0]}>
-            <sphereGeometry args={[1.2, 32, 32]} />
-            <meshStandardMaterial color="#FF6584" />
-          </mesh>
-        )}
-
-        {objectType === "cone" && (
-          <mesh rotation={[0.4, 0.6, 0]}>
-            <coneGeometry args={[1.2, 2, 32]} />
-            <meshStandardMaterial color="#00C49F" />
-          </mesh>
-        )}
+        {/* Custom objecten */}
+        {objectType === "plant" && <Plant />}
+        {objectType === "roof" && <Roof />}
       </Canvas>
     </div>
   );

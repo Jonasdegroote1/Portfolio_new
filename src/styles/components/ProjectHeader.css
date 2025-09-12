@@ -21,6 +21,7 @@
 .project-3dobject {
   flex: 1;                     /* Neemt de andere helft */
   min-width: 300px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;

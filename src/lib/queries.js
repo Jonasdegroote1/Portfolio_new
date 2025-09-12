@@ -70,6 +70,7 @@ export const PROJECT_BY_SLUG_QUERY = `
       }
       liveDemo
       viewCode
+      object3d
     }
   }
 `;

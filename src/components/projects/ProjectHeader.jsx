@@ -61,7 +61,7 @@ export default function ProjectHeader({ project }) {
         </div>
       </div>
       {/* 3D Object */}
-      <Project3DObject objectType={project.objectType} />
+      <Project3DObject objectType={project.object3d} />
     </div>
   );
 }
