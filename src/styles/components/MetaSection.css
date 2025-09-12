@@ -50,6 +50,7 @@
 }
 
 .badge-tech {
+  position: relative; /* nodig voor glossy overlay */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -59,13 +60,49 @@
   font-weight: 600;
   border: 1px solid rgba(37, 99, 235, 0.4);
   background-color: transparent;
-  color: #2563eb; /* blauw */
+  color: #2563eb;
   transition: all 0.3s ease;
+  box-shadow: none;
+  overflow: hidden; /* glossy binnen pill */
 }
 
+/* Glossy overlay */
+.badge-tech::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover met gradient en glow */
 .badge-tech:hover {
-  background-color: #2563eb;
+  background: linear-gradient(145deg, #2563eb, #3b82f6);
   color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+}
+
+.badge-tech:hover::after {
+  opacity: 1; /* glossy zichtbaar bij hover */
+}
+
+/* Actieve state (blijft blauw met gradient) */
+.badge-tech.active {
+  background: linear-gradient(145deg, #2563eb, #3b82f6);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.badge-tech.active::after {
+  opacity: 1;
 }
 
 /* ===== Categorieën (rechthoekige blokken met bolletje) ===== */
