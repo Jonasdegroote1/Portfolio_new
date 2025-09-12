@@ -95,6 +95,10 @@
   background: var(--color-dark-card);
 }
 
+.dark .badge-tech:hover {
+  background: var(--color-dark-card);
+}
+
 .dark .badge-tech::after {
   content: '';
   position: absolute;
