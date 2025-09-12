@@ -91,6 +91,26 @@
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
+.dark .badge-tech::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-20deg) translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+}
+
+.dark .badge-tech:hover::after {
+  transform: skewX(-20deg) translateX(-66.6666%);
+  opacity: 1;
+}
+
 /* Actieve state */
 .badge-tech.active {
   background: linear-gradient(
