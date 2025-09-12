@@ -53,6 +53,7 @@
 @media (max-width: 480px) {
   .project-description__details {
     padding: 1rem;
+    max-width: 80%;
   }
 
   .project-description__details h2 {
