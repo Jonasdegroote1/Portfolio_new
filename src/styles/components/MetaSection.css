@@ -1,9 +1,10 @@
+/* ===== Layout ===== */
 .meta-section {
   display: flex;
   flex-wrap: wrap; /* Voor responsiviteit */
   gap: 60px;       /* Ruimte tussen links en rechts */
   margin: 3rem auto 5rem auto;
-  padding: 2rem;   /* ✅ Mooie consistente padding rondom */
+  padding: 2rem;
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -13,9 +14,10 @@
   flex-direction: column;
   gap: 1rem;
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
 }
 
+/* ===== Titels ===== */
 .meta-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -40,7 +42,7 @@
   border-radius: 2px;
 }
 
-/* Technologieën horizontaal */
+/* ===== Technologieën (pillen) ===== */
 .badges-tech {
   display: flex;
   flex-wrap: wrap;
@@ -48,43 +50,72 @@
 }
 
 .badge-tech {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 25px; /* ronde pillen */
   font-size: 1rem;
   font-weight: 600;
-  background-color: #e0f2ff;
-  color: #0077cc;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  background-color: transparent;
+  color: #2563eb; /* blauw */
+  transition: all 0.3s ease;
 }
 
-/* Categorieën verticaal */
+.badge-tech:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* ===== Categorieën (rechthoekige blokken met bolletje) ===== */
 .categories-vertical {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .badge-cat {
-  padding: 8px 16px;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px; /* afgeronde rechthoek */
   font-size: 1rem;
   font-weight: 600;
-  background-color: #f3f3f3;
-  color: #555;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  background: linear-gradient(90deg, #fff, #f9f9f9);
+  color: #333;
 }
 
-.dark .badge-cat {
-  background-color: var(--color-dark-card);
+/* blauw bolletje */
+.badge-cat::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  flex-shrink: 0;
+}
+
+/* ===== Dark mode ===== */
+.dark .badge-tech {
+  border-color: rgba(255, 255, 255, 0.2);
   color: var(--color-dark-card-text);
 }
 
-/* 📱 Responsive tweaks */
-@media (max-width: 1024px) {
-  .meta-section {
-    gap: 40px;
-    padding: 1.5rem;
-  }
+.dark .badge-cat {
+  background: var(--color-dark-card);
+  color: var(--color-dark-card-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.dark .badge-cat::before {
+  background-color: #60a5fa; /* lichtere blauw in dark mode */
+}
+
+/* ===== Responsive tweaks ===== */
 @media (max-width: 768px) {
   .meta-section {
     flex-direction: column;
@@ -98,11 +129,6 @@
 }
 
 @media (max-width: 480px) {
-  .meta-section {
-    padding: 1rem;
-    gap: 1.5rem;
-  }
-
   .meta-title {
     font-size: 1.1rem;
   }
@@ -110,6 +136,6 @@
   .badge-tech,
   .badge-cat {
     font-size: 0.9rem;
-    padding: 8px 14px;
+    padding: 10px 14px;
   }
 }
