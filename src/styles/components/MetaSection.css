@@ -79,55 +79,31 @@
   stroke: currentColor;
 }
 
-/* Hover: blauw top → transparant bottom */
+/* Hover: subtiele gradient van lichtblauw → transparant */
 .badge-tech:hover {
   background: linear-gradient(
     to bottom,
-    rgba(37, 99, 235, 0.95) 0%,
-    rgba(37, 99, 235, 0.75) 40%,
-    rgba(37, 99, 235, 0) 100%
+    rgba(147, 197, 253, 0.4) 0%,   /* Lichtblauw */
+    rgba(147, 197, 253, 0.15) 50%, /* Nog subtieler */
+    rgba(147, 197, 253, 0) 100%    /* Transparant */
   );
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
   transform: translateY(-2px);
-}
-
-/* Glossy overlay (lichte glans bovenaan) */
-.badge-tech::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: rgba(255, 255, 255, 0.25);
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.badge-tech:hover::after {
-  opacity: 1;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
 /* Actieve state */
 .badge-tech.active {
   background: linear-gradient(
     to bottom,
-    rgba(37, 99, 235, 1) 0%,
-    rgba(37, 99, 235, 0.85) 50%,
-    rgba(37, 99, 235, 0) 100%
+    rgba(147, 197, 253, 0.5) 0%,
+    rgba(147, 197, 253, 0.25) 50%,
+    rgba(147, 197, 253, 0) 100%
   );
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-}
-
-.badge-tech.active::after {
-  opacity: 1;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
 /* ===== Categorieën (rechthoekige blokken met bolletje) ===== */
@@ -170,8 +146,8 @@
 .dark .badge-tech.active {
   background: linear-gradient(
     to bottom,
-    rgba(96, 165, 250, 0.95) 0%,
-    rgba(96, 165, 250, 0.75) 40%,
+    rgba(96, 165, 250, 0.35) 0%,
+    rgba(96, 165, 250, 0.2) 50%,
     rgba(96, 165, 250, 0) 100%
   );
   color: #fff;
