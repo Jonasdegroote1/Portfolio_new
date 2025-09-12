@@ -54,6 +54,7 @@
 @media (max-width: 768px) {
   .project-links {
     padding: 1.5rem;
+    max-width: 90%;
   }
 
   .project-links h2 {
