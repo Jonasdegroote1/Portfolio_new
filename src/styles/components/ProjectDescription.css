@@ -1,10 +1,11 @@
 .project-description__details {
   display: flex;
-  padding: 2rem;
-  width:  62.5rem;
   flex-direction: column;
-  border: solid 1px var(--color-primary);
+  padding: 2rem;
+  width: 100%;
+  max-width: 62.5rem; /* 1000px */
   margin: 0 auto;
+  border: solid 1px var(--color-primary);
   border-radius: var(--border-radius-3xl);
   background-color: var(--color-dark-foreground);
   box-shadow: 0 10px 20px -2px rgba(37, 99, 235, 0.6);
@@ -35,4 +36,30 @@
 
 .dark .project-description__details h2 {
   color: var(--color-dark-card-text);
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .project-description__details {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .project-description__details h2::after {
+    width: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-description__details {
+    padding: 1rem;
+  }
+
+  .project-description__details h2 {
+    font-size: 1.25rem;
+  }
+
+  .project-description__details h2::after {
+    width: 4rem;
+  }
 }
