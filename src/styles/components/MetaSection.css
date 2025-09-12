@@ -96,7 +96,9 @@
 }
 
 .dark .badge-tech:hover {
-  background: var(--color-dark-card);
+  background: var(--color-dark-card); /* zelfde als default */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
 }
 
 .dark .badge-tech::after {
