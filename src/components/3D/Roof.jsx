@@ -1,58 +1,42 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
 
-export default function Roof() {
-  const group = useRef();
+function Roof() {
+  const meshRef = useRef();
 
-  const rows = 12;  // aantal rijen pannen per helling
-  const cols = 16;  // aantal pannen per rij
-  const tileWidth = 0.5;
-  const tileHeight = 0.05;
-  const tileDepth = 0.25;
+  // dakvorm: driehoekig vlak (tweekantig)
+  const roofWidth = 4;
+  const roofDepth = 3;
   const roofHeight = 2;
-  const roofWidth = cols * tileWidth;
 
-  useEffect(() => {
-    if (!group.current) return;
+  // driehoekig dakvlak voor linker- en rechterkant
+  const geometry = new THREE.BufferGeometry();
+  const vertices = new Float32Array([
+    -roofWidth / 2, 0, 0,       // linker onderhoek
+     roofWidth / 2, 0, 0,       // rechter onderhoek
+     0, roofHeight, roofDepth / 2, // top van het dak
+  ]);
+  geometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
+  geometry.computeVertexNormals();
 
-    for (let side = -1; side <= 1; side += 2) { // -1 = linkerkant, 1 = rechterkant
-      for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-          const geometry = new THREE.BoxGeometry(tileWidth, tileHeight, tileDepth);
-          const material = new THREE.MeshStandardMaterial({
-            color: new THREE.Color().setHSL(0.05, 0.7, 0.3 + Math.random() * 0.1),
-          });
-          const tile = new THREE.Mesh(geometry, material);
+  const material = new THREE.MeshStandardMaterial({ color: 0x8b0000, side: THREE.DoubleSide });
 
-          // basispositie
-          const x = col * tileWidth - roofWidth / 2;
-          const z = row * tileDepth;
+  return <mesh ref={meshRef} geometry={geometry} material={material} position={[0,1.5,0]} />;
+}
 
-          // dakhelling
-          const slope = roofHeight / (roofWidth / 2);
-          const y = slope * (side === -1 ? -x : x);
-
-          // overlappende rijen
-          tile.position.set(x, y + row * tileHeight * 0.8, z);
-
-          // lichte rotatie van pannen voor realisme
-          tile.rotation.x = -0.05 + Math.random() * 0.1;
-          tile.rotation.y = Math.random() * 0.02;
-
-          group.current.add(tile);
-        }
-      }
-    }
-  }, []);
-
+export default function App() {
   return (
-    <group ref={group} position={[0, roofHeight / 2, 0]}>
-      {/* Fundament van het huis */}
-      <mesh position={[0, -roofHeight / 2, (rows * tileDepth)/2]}>
-        <boxGeometry args={[roofWidth, roofHeight, rows * tileDepth]} />
+    <Canvas camera={{ position: [5,5,5], fov: 50 }}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[5,10,5]} intensity={1} />
+      <Roof />
+      {/* Huisbasis */}
+      <mesh position={[0,0,0]}>
+        <boxGeometry args={[4,3,3]} />
         <meshStandardMaterial color="lightgray" />
       </mesh>
-    </group>
+    </Canvas>
   );
 }
