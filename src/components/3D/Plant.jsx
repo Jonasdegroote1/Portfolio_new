@@ -4,14 +4,14 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-function SinglePlant({ position = [0, 0, 0], scale = .8 }) { // scale verhoogd
+function SinglePlant({ scale = 1 }) { // uniforme schaal
   const ref = useRef();
   const { scene } = useGLTF("/models/fancy-plant.glb");
 
   // Centraal positioneren via bounding box
   const box = new THREE.Box3().setFromObject(scene);
   const center = box.getCenter(new THREE.Vector3());
-  scene.position.sub(center); // verplaats model naar center
+  scene.position.sub(center);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
@@ -28,34 +28,33 @@ function SinglePlant({ position = [0, 0, 0], scale = .8 }) { // scale verhoogd
     });
   });
 
-  return (
-    <primitive ref={ref} object={scene} position={position} scale={scale} />
-  );
+  return <primitive ref={ref} object={scene} scale={[scale, scale, scale]} />;
 }
 
 export default function PlantScene() {
-  return (
-    <group position={[0, -2, 0]}> {/* hele cluster iets naar beneden */}
-      {/* Cluster van planten */}
-      <SinglePlant position={[-0.5, 0, 0]} scale={1} />
-      <SinglePlant position={[0.5, 0.1, 0.3]} scale={1.1} />
-      <SinglePlant position={[0, -0.2, -0.5]} scale={0.9} />
-      <SinglePlant position={[0.6, 0, -0.4]} scale={0.95} />
-      <SinglePlant position={[-0.6, -0.1, 0.5]} scale={1} />
+  const scale = 1; // vaste schaal
+  const positionY = -2; // vaste positie
 
-      {/* Magische zwevende bloemetjes/glows */}
-      {[[-0.3, 1.0, 0.2, "pink"], [0.2, 0.9, -0.5, "lightblue"], [0.5, 0.8, 0.7, "lavender"]].map(
-        ([x, y, z, color], i) => (
-          <mesh key={i} position={[x, y, z]}>
-            <sphereGeometry args={[0.05, 12, 12]} />
-            <meshStandardMaterial
-              emissive={color}
-              emissiveIntensity={0.9}
-              color={color}
-            />
-          </mesh>
-        )
-      )}
+  return (
+    <group position={[0, positionY, 0]} scale={[scale, scale, scale]}>
+      {/* Eén centrale plant */}
+      <SinglePlant />
+
+      {/* Magische bolletjes/glows (fixed) */}
+      {[
+        [-0.3, 1.0, 0.2, "pink"],
+        [0.2, 0.9, -0.5, "lightblue"],
+        [0.5, 0.8, 0.7, "lavender"],
+      ].map(([x, y, z, color], i) => (
+        <mesh key={i} position={[x, y, z]}>
+          <sphereGeometry args={[0.05, 12, 12]} />
+          <meshStandardMaterial
+            emissive={color}
+            emissiveIntensity={0.9}
+            color={color}
+          />
+        </mesh>
+      ))}
 
       {/* Lichtjes */}
       <pointLight position={[0, 2, 0]} intensity={0.6} color="white" />
