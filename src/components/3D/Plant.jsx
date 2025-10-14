@@ -35,7 +35,7 @@ function SinglePlant({ position = [0, 0, 0], scale = .8 }) { // scale verhoogd
 
 export default function PlantScene() {
   return (
-    <group position={[0, -0.7, 0]}> {/* hele cluster iets naar beneden */}
+    <group position={[0, -2, 0]}> {/* hele cluster iets naar beneden */}
       {/* Cluster van planten */}
       <SinglePlant position={[-0.5, 0, 0]} scale={1} />
       <SinglePlant position={[0.5, 0.1, 0.3]} scale={1.1} />
