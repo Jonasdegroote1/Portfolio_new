@@ -4,17 +4,18 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-function SinglePlant({ scale = 1 }) { // uniforme schaal
+function SinglePlant({ scale = 1 }) {
   const ref = useRef();
   const { scene } = useGLTF("/models/fancy-plant.glb");
 
-  // Centraal positioneren via bounding box
+  // Center het model
   const box = new THREE.Box3().setFromObject(scene);
   const center = box.getCenter(new THREE.Vector3());
   scene.position.sub(center);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
+    // subtiele rotatie animatie
     ref.current.rotation.y = Math.sin(t * 0.3) * 0.3;
 
     scene.traverse((child) => {
@@ -32,15 +33,15 @@ function SinglePlant({ scale = 1 }) { // uniforme schaal
 }
 
 export default function PlantScene() {
-  const scale = 1; // vaste schaal
-  const positionY = -2; // vaste positie
+  const scale = 1;       // vaste schaal
+  const positionY = -1.5; // iets hoger geplaatst
 
   return (
     <group position={[0, positionY, 0]} scale={[scale, scale, scale]}>
       {/* Eén centrale plant */}
       <SinglePlant />
 
-      {/* Magische bolletjes/glows (fixed) */}
+      {/* Magische bolletjes/glows */}
       {[
         [-0.3, 1.0, 0.2, "pink"],
         [0.2, 0.9, -0.5, "lightblue"],
