@@ -6,41 +6,28 @@ import { useFrame } from "@react-three/fiber";
 export default function Roof() {
   const group = useRef();
 
-  const rows = 6; // aantal rijen pannen
-  const cols = 10; // aantal kolommen pannen
-  const roofWidth = cols * 0.5;
-  const roofDepth = rows * 0.25;
-  const roofHeight = 1.5; // hoogte van het dak
+  const rows = 6;
+  const cols = 10;
 
   useEffect(() => {
     if (!group.current) return;
 
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < cols; j++) {
+        // Maak halve cilinder als dakpan
         const geometry = new THREE.CylinderGeometry(0.3, 0.3, 0.5, 16, 1, true, 0, Math.PI);
-        const material = new THREE.MeshStandardMaterial({
-          color: new THREE.Color().setHSL(0.05, 0.7, 0.3 + Math.random() * 0.1),
-          side: THREE.DoubleSide,
+        const material = new THREE.MeshStandardMaterial({ 
+          color: new THREE.Color().setHSL(0.05, 0.7, 0.3 + Math.random() * 0.1), 
+          side: THREE.DoubleSide 
         });
         const tile = new THREE.Mesh(geometry, material);
 
+        // Positioneer met overlappende rijen
         tile.rotation.z = Math.PI / 2; // leg de cilinder plat
+        tile.position.set(j * 0.5 + (i % 2 === 0 ? 0.25 : 0), 2, i * 0.25);
 
-        // Bepaal op welke helling het paneel ligt
-        const isLeftSide = j < cols / 2;
-        const xOffset = j * 0.5 - roofWidth / 4; // center het dak
-        const yOffset = (i * 0.25) / 2;
-        const zOffset = i * 0.25;
-
-        // helling van dak
-        const slope = roofHeight / (cols / 2 * 0.5);
-        const ySlope = isLeftSide ? slope * (-xOffset) : slope * xOffset;
-
-        tile.position.set(xOffset, ySlope + roofHeight / 2, zOffset);
-
-        // Sla de targetY en delay op voor animatie
-        tile.userData.targetY = tile.position.y;
-        tile.position.y += 2; // start boven
+        // Start boven en laat naar beneden vallen
+        tile.userData.targetY = 0;
         tile.userData.delay = (i * cols + j) * 0.05;
 
         group.current.add(tile);
@@ -60,12 +47,16 @@ export default function Roof() {
   });
 
   return (
-    <group ref={group} position={[0, 0, 0]} rotation={[0, 0, 0]}>
+    <group ref={group} position={[0, 0, 0]} rotation={[0.5, 0, 0]}>
       {/* Fundament */}
       <mesh
-        position={[0, -0.05, roofDepth / 2]}
+        position={[
+          (cols * 0.5) / 2,
+          -0.05,
+          (rows * 0.25) / 2,
+        ]}
       >
-        <boxGeometry args={[roofWidth, 0.1, roofDepth]} />
+        <boxGeometry args={[cols * 0.5, 0.1, rows * 0.25]} />
         <meshStandardMaterial color="gray" />
       </mesh>
     </group>
